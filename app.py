@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
+
 from langchain.agents import create_csv_agent
 from langchain.chat_models import ChatOpenAI
 from langchain.llms import OpenAI
@@ -21,7 +23,7 @@ chat_prompt_template = ChatPromptTemplate.from_messages([
 
 def main():
     st.title("ExcelAI")
-    st.subheader("An Excel assistant powered by OpenAI")
+    st.subheader("talk to your excel sheet")
 
     # Create a file input widget and allow the user to upload a CSV or Excel file
     file = st.file_uploader("Upload a CSV or Excel file", type=["csv", "xlsx"])
@@ -65,15 +67,16 @@ def main():
 
             # Format agent response prompt
             agent_prompt_formatted = ChatPromptTemplate.from_messages([system_prompt]).format_prompt(file_type=file.type).to_messages()
-
+        
             # Write response and prompt for next query
             st.write(response)
             st.write(agent_prompt_formatted[0].content)
 
+            # Get next query
+            query = st.text_input("", "")
 
         # Delete the temporary file
         os.remove(temp.name)
-
 
 if __name__ == "__main__":
     main()
