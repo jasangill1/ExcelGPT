@@ -67,6 +67,7 @@ def main():
 
             # Format agent response prompt
             agent_prompt_formatted = ChatPromptTemplate.from_messages([system_prompt]).format_prompt(file_type=file.type).to_messages()
+
         
             # Write response and prompt for next query
             st.write(response)
