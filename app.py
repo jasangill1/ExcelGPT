@@ -73,8 +73,6 @@ def main():
             st.write(response)
             st.write(agent_prompt_formatted[0].content)
 
-            # Get next query
-            query = st.text_input("", "")
 
         # Delete the temporary file
         os.remove(temp.name)
