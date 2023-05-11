@@ -1,32 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+/* styles/globals.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 body {
-  font-family: 'Courier New', Courier, monospace;
   margin: 0;
-  padding: 0;
-  background-color: black;
-  color: limegreen;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.w-800 {
+  width: 800px;
+}
+
+.h-600 {
+  height: 600px;
+}
+
+.border-40 {
+  border-width: 40px;
+}
+
+.rounded-60 {
+  border-radius: 60px;
+}
+
+.shadow-2xl {
+  box-shadow: 0 0 40px #000;
+}
+
+.bg-gradient-to-center {
+  background: radial-gradient(circle at center, #444, #000);
+}
+
+.text-4xl {
+  font-size: 40px;
+}
+
+.w-4/5 {
+  width: 80%;
+}
+
+.text-2xl {
+  font-size: 20px;
+}
+
+.p-4 {
+  padding: 20px;
+}
+
+.rounded-10 {
+  border-radius: 10px;
 }

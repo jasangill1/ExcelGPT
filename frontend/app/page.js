@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import Sidebar from '../components/Sidebar'
-import InputMessage from '../components/Inputbox'
-import Screen from '../components/Chatscreen'
 import "./globals.css"
+import TV from 'components/TV'
+
 
 export default function Home() {
   return (
@@ -12,12 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="bg-gray flex items-center justify-center h-screen">
-        <main>
-          <div className="container mx-auto box-border p-4">
-            <Sidebar />
-            <Screen />
-            <InputMessage />
+      <div>
+        <main>  
+          <div>
+            <TV/>
           </div>
         </main>
        </div>
