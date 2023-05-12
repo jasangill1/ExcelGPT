@@ -35,6 +35,7 @@ const FileUpload = () => {
             <input {...getInputProps()} />
             {isDragActive ? <p>Drop the files here...</p> : <p>Drag 'n' drop some files here, or click to select files</p>}
         </div>
+        {file && <p className="mt-4 text-green-400">Selected file: {file.name}</p>}
         <button 
             type="submit" 
             className="mt-4 bg-green-400 text-black px-4 py-2 rounded shadow-md hover:bg-green-500 active:bg-green-600 transition-colors duration-200"
