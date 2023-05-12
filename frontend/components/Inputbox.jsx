@@ -11,19 +11,20 @@ export default function InputMessage() {
 
     const handleKeyPress = async (e) => {
         if (e.key === 'Enter') {
-            // Send message to the backend when Enter key is pressed
-                        const res = await fetch('http://127.0.0.1:5000/send_message', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message }),
-            });
-            const data = await res.json();
-            console.log(data);
-    
-            // Clear the input field
-            setMessage("");
+          // Send message to the backend when Enter key is pressed
+          const res = await fetch('http://127.0.0.1:5000/send_message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message }),
+          });
+          const data = await res.json();
+          console.log(data); // Log the response data to the console
+      
+          // Clear the input field
+          setMessage("");
         }
-    };
+      };
+      
     
 
     return (

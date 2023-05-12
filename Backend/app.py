@@ -8,6 +8,8 @@ from langchain.llms import OpenAI
 from langchain.prompts import ChatPromptTemplate, SystemMessagePromptTemplate, HumanMessagePromptTemplate
 import tempfile
 import os
+import sys
+
 
 # Load OpenAI API key from environment variables or .env file
 openai_api_key ="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"
@@ -57,18 +59,34 @@ def get_response():
 
 @app.route("/send_message", methods=["POST"])
 def send_message():
-    data = request.get_json()
-    message = data['message']
+    try:
+        data = request.get_json()
+        message = data['message']
 
-    # Process the message with the AI model
-    agent_input = [HumanMessagePromptTemplate.from_template(message)]
-    response = agent.run(agent_input)
+        # Process the message with the AI model
+        agent_input = [HumanMessagePromptTemplate.from_template(message)]
+        response = agent.run(agent_input)
 
-    # Get the AI model's response
-    agent_response = response.choices[0].message.content
+        # Get the AI model's response
+        agent_response = response[0]['message']['content']
 
-    # Return the response
-    return jsonify(response=agent_response)
+        # Capture console logs
+        console_logs = []
+        def log_to_console(message):
+            console_logs.append(message)
+        sys.stdout = log_to_console  # Redirect stdout to capture logs
+
+        # Execute the console logs by evaluating the agent_response
+        exec(agent_response)
+
+        # Restore stdout
+        sys.stdout = sys.__stdout__
+
+        # Return the console logs as the response
+        return jsonify(response=console_logs)
+    except Exception as e:
+        return jsonify(response=str(e)), 500
+
 
 if __name__ == "__main__":
     app.run()
