@@ -41,7 +41,7 @@ def get_response():
         temperature=0.0,
         model_name="text-davinci-003",
         openai_api_key=openai_api_key,
-        max_tokens=256
+        
     )
     agent = create_csv_agent(openai_llm, temp.name, verbose=True)
 
@@ -51,6 +51,17 @@ def get_response():
 
     # Return initial prompt as response
     return jsonify(response=initial_prompt[0].content)
+
+@app.route("/send_message", methods=["POST"])
+def send_message():
+    data = request.get_json()
+    message = data['message']
+
+    # Here you can process the message and generate a response using your AI model
+    # For now, we will just return the same message
+    response = f"Received: {message}"
+
+    return jsonify(response=response)
 
 if __name__ == "__main__":
     app.run()
