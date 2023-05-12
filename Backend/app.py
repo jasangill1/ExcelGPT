@@ -68,22 +68,13 @@ def send_message():
         response = agent.run(agent_input)
 
         # Get the AI model's response
+        print(response)
         agent_response = response[0]['message']['content']
 
-        # Capture console logs
-        console_logs = []
-        def log_to_console(message):
-            console_logs.append(message)
-        sys.stdout = log_to_console  # Redirect stdout to capture logs
 
-        # Execute the console logs by evaluating the agent_response
-        exec(agent_response)
 
-        # Restore stdout
-        sys.stdout = sys.__stdout__
-
-        # Return the console logs as the response
-        return jsonify(response=console_logs)
+        # Return the agent response
+        return jsonify(response=agent_response)
     except Exception as e:
         return jsonify(response=str(e)), 500
 
