@@ -5,6 +5,7 @@ import { useDropzone } from 'react-dropzone';
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
+  const [response, setResponse] = useState(null);
 
   const onDrop = useCallback(acceptedFiles => {
     setFile(acceptedFiles[0]);
@@ -17,17 +18,22 @@ const FileUpload = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append('file', file);
-
-    await fetch('http://your-backend-url/api/upload', {
+  
+    const res = await fetch('http://127.0.0.1:5000/', {
         method: 'POST',
         body: formData,
     });
-
+    const data = await res.json();
+  
+    console.log(data); // This will log the entire response object to the console
+  
+    setResponse(data.response);
     setFile(null);
   }
+  
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col bg-black text-green-400 p-6 rounded-lg shadow-lg">
@@ -42,6 +48,7 @@ const FileUpload = () => {
         >
             Upload
         </button>
+        {response && <p className="mt-4 text-green-400">Response: {response}</p>}
     </form>
   )
 }
