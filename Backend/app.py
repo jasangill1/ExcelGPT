@@ -66,17 +66,14 @@ def send_message():
         # Process the message with the AI model
         agent_input = [HumanMessagePromptTemplate.from_template(message)]
         response = agent.run(agent_input)
-
-        # Get the AI model's response
-        print(response)
-        agent_response = response[0]['message']['content']
-
-
-
-        # Return the agent response
-        return jsonify(response=agent_response)
+        
+        # Return the response
+        return jsonify(response=response)
     except Exception as e:
         return jsonify(response=str(e)), 500
+
+
+
 
 
 if __name__ == "__main__":
