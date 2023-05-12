@@ -1,7 +1,6 @@
-
-
 import matplotlib.pyplot as plt
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 import pandas as pd
 from langchain.agents import create_csv_agent
 from langchain.chat_models import ChatOpenAI
@@ -24,6 +23,7 @@ chat_prompt_template = ChatPromptTemplate.from_messages([
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
 @app.route("/", methods=["POST"])
 def get_response():
@@ -39,7 +39,7 @@ def get_response():
     # Create a LangChain agent for the file
     openai_llm = OpenAI(
         temperature=0.0,
-        model_name="gpt-3.5-turbo",
+        model_name="text-davinci-003",
         openai_api_key=openai_api_key,
         max_tokens=256
     )
