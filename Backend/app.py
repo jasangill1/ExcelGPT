@@ -25,6 +25,14 @@ chat_prompt_template = ChatPromptTemplate.from_messages([
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
+# Create LangChain agent
+openai_llm = OpenAI(
+    temperature=0.0,
+    model_name="text-davinci-003",
+    openai_api_key=openai_api_key
+)
+agent = None
+
 @app.route("/", methods=["POST"])
 def get_response():
     # Get file from POST request
@@ -37,12 +45,7 @@ def get_response():
         df = pd.read_csv(temp.name) if file.content_type == "text/csv" else pd.read_excel(temp.name)
 
     # Create a LangChain agent for the file
-    openai_llm = OpenAI(
-        temperature=0.0,
-        model_name="text-davinci-003",
-        openai_api_key=openai_api_key,
-        
-    )
+    global agent
     agent = create_csv_agent(openai_llm, temp.name, verbose=True)
 
     # Get initial prompt
@@ -57,11 +60,15 @@ def send_message():
     data = request.get_json()
     message = data['message']
 
-    # Here you can process the message and generate a response using your AI model
-    # For now, we will just return the same message
-    response = f"Received: {message}"
+    # Process the message with the AI model
+    agent_input = [HumanMessagePromptTemplate.from_template(message)]
+    response = agent.run(agent_input)
 
-    return jsonify(response=response)
+    # Get the AI model's response
+    agent_response = response.choices[0].message.content
+
+    # Return the response
+    return jsonify(response=agent_response)
 
 if __name__ == "__main__":
     app.run()
