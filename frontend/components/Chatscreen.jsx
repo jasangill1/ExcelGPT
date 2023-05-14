@@ -8,18 +8,16 @@ export default function Screen() {
   const { messages } = useContext(ChatContext);
 
   return (
-    <div className="relative w-[900px] h-full bg-gradient-to-center from-gray-700 to-black overflow-hidden float-left rounded-3xl">
-      {messages.length === 0 ? (
-        <div className="absolute text-green-400 text-4xl top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          Welcome to Retro TV!
-        </div>
-      ) : (
-        <div>
-          {messages.map((message, index) => (
+    <div className="relative w-[900px] h-full bg-black overflow-auto float-left rounded-3xl">
+      <div className="text-white text-xl p-4">
+        {messages.length === 0 ? (
+          <p>ExcelAi: welcome to ExcelAi...</p>
+        ) : (
+          messages.map((message, index) => (
             <ChatMessage key={index} message={message.text} isUser={message.isUser} />
-          ))}
-        </div>
-      )}
+          ))
+        )}
+      </div>
     </div>
   );
 }
