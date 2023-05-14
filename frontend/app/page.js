@@ -5,7 +5,7 @@ import Header from 'components/Header'
 
 export default function Home() {
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gray-100">
+    <div className="flex flex-col justify-center items-center h-screen bg-gray-900">
       <Head>
         <title>ExcelGPT</title>
         <link rel="icon" href="/favicon.ico" />

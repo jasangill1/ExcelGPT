@@ -7,11 +7,13 @@ import { ChatProvider } from "./ChatContext";
 
 const TV = () => {
     return (
-        <div className="w-[1200px] h-[700px] bg-black border-40 border-gray-800 rounded-60 relative shadow-2xl flex">
+        <div className="w-[1200px] h-[700px] bg-black  border-gray-800 relative shadow-2xl flex">
             <Sidebar />
             <ChatProvider>
-                <Screen />
-                <InputMessage />
+                <div className="flex flex-col h-full">
+                    <Screen className="flex-1 overflow-auto" />
+                    <InputMessage />
+                </div>
             </ChatProvider>
         </div>
     );
