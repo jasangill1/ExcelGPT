@@ -2,7 +2,7 @@
 import React from 'react';
 import Screen from './Chatscreen';
 import Sidebar from './Sidebar';
-import InputMessage from './InputBox';
+import InputMessage from './Inputbox';
 import { ChatProvider } from "./ChatContext";
 
 const TV = () => {
