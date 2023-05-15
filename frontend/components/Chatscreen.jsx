@@ -8,7 +8,7 @@ export default function Screen({ className }) {
   const { messages } = useContext(ChatContext);
 
   return (
-    <div className={`${className} relative bg-black overflow-auto rounded-3xl p-4 sm:p-6 lg:p-8`}>
+    <div className={`${className} relative bg-black overflow-auto p-4 sm:p-6 lg:p-8`}>
       <div className="text-white text-lg sm:text-xl lg:text-2xl">
         {messages.length === 0 ? (
            <div>
@@ -28,14 +28,14 @@ export default function Screen({ className }) {
         
 <h3 className="text-green-400 font-mono mt-4 text-md sm:text-lg lg:text-xl">Example Usage</h3>
 <ol className="font-mono list-decimal list-inside text-left text-sm sm:text-md lg:text-lg">
-  <li>Upload a CSV file containing sales data</li>
-  <li>Ask ExcelAI questions</li>
+  <li>Upload an EXCEL file containing data</li>
+  <li>Ask ExcelGPT questions</li>
   <li>Receive responses from ExcelGPT</li>
 </ol>
 <p className="font-mono mt-4 text-sm sm:text-md lg:text-lg">
   ExcelAI simplifies data analysis tasks by providing an intuitive conversational interface and leveraging the power of AI.
 </p>
-<pre className="font-mono text-white bg-black p-2 rounded text-xs sm:text-sm lg:text-base hidden sm:block">
+<pre className="font-mono text-white bg-black p-2 rounded text-xs sm:text-sm lg:text-base  sm:block">
 <code>
 {` 
 +------------------------------------------+
