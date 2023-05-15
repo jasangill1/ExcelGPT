@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useCallback, useContext, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { ChatContext } from "./ChatContext";
@@ -45,7 +44,7 @@ const FileUpload = () => {
     <form onSubmit={onSubmit} className="flex flex-col bg-black text-green-400 p-6 rounded-lg shadow-lg">
         <div {...getRootProps()} className="dropzone flex items-center justify-center h-32 border-2 border-dashed border-green-400 rounded cursor-pointer">
             <input {...getInputProps()} />
-            {isDragActive ? <p>Drop the files here...</p> : <p>Drag 'n' drop some files here, or click to select files</p>}
+            {isDragActive ? <p>Drop the files here...</p> : <p>Drag 'n' drop some, or click to select file</p>}
         </div>
         {file && <p className="mt-4 text-green-400">Selected file: {file.name}</p>}
         <button 
