@@ -21,7 +21,7 @@ export default function Home() {
         <div className="fixed z-10 inset-0 overflow-y-auto">
           <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity" aria-hidden="true">
-              <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
+              <div className="absolute inset-0 bg-gray-500 opacity-25"></div>
             </div>
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <IntroMessage onClose={handleCloseIntro} />
@@ -29,8 +29,8 @@ export default function Home() {
           </div>
         </div>
       )}
-      <main className="flex justify-center items-center flex-grow">  
-        <div className="w-[1200px] h-[700px] bg-black  border-gray-800 relative shadow-2xl flex">
+      <main className=" w-full flex justify-center items-center flex-grow">  
+        <div className="w-full h-full bg-black border-gray-800 relative shadow-2xl flex">
           <ChatProvider>
             <Sidebar />
             <div className="flex flex-col h-full flex-grow"> 
