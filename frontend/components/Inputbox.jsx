@@ -1,4 +1,3 @@
-// components/InputMessage.js
 'use client'
 import { useState, useContext } from "react";
 import { ChatContext } from "./ChatContext";
@@ -13,22 +12,20 @@ export default function InputMessage() {
 
     const handleKeyPress = async (e) => {
         if (e.key === 'Enter') {
-          // Send message to the backend when Enter key is pressed
+          
           const res = await fetch('http://127.0.0.1:5000/send_message', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message }),
           });
           const data = await res.json();
-          console.log(data); // Log the response data to the console
+          console.log(data); 
       
-          // Clear the input field
           setMessage("");
-          
-          // Add the user's message to the messages state
+         
           setMessages([...messages, { text: message, isUser: true }]);
           
-          // Add the AI's response to the messages state
+         
           setMessages(prevMessages => [...prevMessages, { text: data.response, isUser: false }]);
         }
       };

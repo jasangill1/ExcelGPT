@@ -1,4 +1,3 @@
-// components/Header.js
 function Header() {
     return (
       <div className="py-2 text-center bg-black text-green-400">
