@@ -1,11 +1,13 @@
 'use client'
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { ChatContext } from "./ChatContext";
 
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [response, setResponse] = useState(null);
+  const { setMessages } = useContext(ChatContext); // <-- Here you extract setMessages from your context
 
   const onDrop = useCallback(acceptedFiles => {
     setFile(acceptedFiles[0]);
@@ -32,7 +34,11 @@ const FileUpload = () => {
   
     setResponse(data.response);
     setFile(null);
+  
+    // add the response to the messages state
+    setMessages(prevMessages => [...prevMessages, { text: data.response, isUser: false }]);
   }
+  
   
 
   return (
@@ -48,7 +54,7 @@ const FileUpload = () => {
         >
             Upload
         </button>
-        {response && <p className="mt-4 text-green-400">Response: {response}</p>}
+        
     </form>
   )
 }
