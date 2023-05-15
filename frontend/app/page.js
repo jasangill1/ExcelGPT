@@ -13,11 +13,11 @@ export default function Home() {
       <main className="flex justify-center items-center flex-grow">  
       <div className="w-[1200px] h-[700px] bg-black  border-gray-800 relative shadow-2xl flex">
             <ChatProvider>
-            <Sidebar />
-                <div className="flex flex-col h-full flex-grow"> 
-                    <Screen className="flex-grow overflow-auto" />
-                    <InputMessage className="w-full"/>
-                </div>
+              <Sidebar />
+              <div className="flex flex-col h-full flex-grow"> 
+                  <Screen className="flex-grow overflow-auto" />
+                  <InputMessage className="w-full"/>
+              </div>
             </ChatProvider>
         </div>
       </main>
