@@ -10,9 +10,9 @@ const TV = () => {
         <div className="w-[1200px] h-[700px] bg-black  border-gray-800 relative shadow-2xl flex">
             <Sidebar />
             <ChatProvider>
-                <div className="flex flex-col h-full w-full"> 
+                <div className="flex flex-col h-full flex-grow"> 
                     <Screen className="flex-grow overflow-auto" />
-                    <InputMessage />
+                    <InputMessage className="w-full"/>
                 </div>
             </ChatProvider>
         </div>
