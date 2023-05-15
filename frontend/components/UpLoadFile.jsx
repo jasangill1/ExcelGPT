@@ -6,7 +6,7 @@ import { ChatContext } from "./ChatContext";
 const FileUpload = () => {
   const [file, setFile] = useState(null);
   const [response, setResponse] = useState(null);
-  const { setMessages } = useContext(ChatContext); // <-- Here you extract setMessages from your context
+  const { setMessages } = useContext(ChatContext); 
 
   const onDrop = useCallback(acceptedFiles => {
     setFile(acceptedFiles[0]);
