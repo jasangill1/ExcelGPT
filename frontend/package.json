@@ -19,5 +19,8 @@
     "react-dom": "18.2.0",
     "react-dropzone": "^14.2.3",
     "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "null-loader": "^4.0.1"
   }
 }

@@ -1,6 +1,5 @@
-// components/Screen.js
+
 'use client'
-// components/Screen.js
 import { useContext } from "react";
 import { ChatContext } from "./ChatContext";
 import ChatMessage from "./ChatMessage";

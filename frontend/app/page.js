@@ -8,7 +8,7 @@ export default function Home() {
     <div className="flex flex-col justify-center items-center h-screen bg-gray-900">
       <Head>
         <title>ExcelGPT</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
       <Header />
       <main className="flex justify-center items-center flex-grow">  

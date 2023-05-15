@@ -1,4 +1,4 @@
-// components/ChatMessage.js
+
 function ChatMessage({ message, isUser }) {
   return (
     <div className="my-2 text-left">

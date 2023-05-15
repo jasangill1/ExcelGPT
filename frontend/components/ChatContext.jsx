@@ -1,4 +1,4 @@
-// contexts/ChatContext.js
+
 'use client'
 import { createContext, useState } from 'react';
 

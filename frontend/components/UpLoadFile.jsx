@@ -29,12 +29,12 @@ const FileUpload = () => {
     });
     const data = await res.json();
   
-    console.log(data); // This will log the entire response object to the console
+    console.log(data); 
   
     setResponse(data.response);
     setFile(null);
   
-    // add the response to the messages state
+    
     setMessages(prevMessages => [...prevMessages, { text: data.response, isUser: false }]);
   }
   
