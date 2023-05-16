@@ -23,7 +23,7 @@ const FileUpload = () => {
     const formData = new FormData();
     formData.append('file', file);
   
-    const res = await fetch('https://excelsior-5wpk.vercel.app/', {
+    const res = await fetch('https://flask-heroku-xlgpt.herokuapp.com/', {
       method: 'POST',
       body: formData,
     });

@@ -13,7 +13,7 @@ export default function InputMessage() {
     const handleKeyPress = async (e) => {
         if (e.key === 'Enter') {
           
-          const res = await fetch('http://excelsior-5wpk.vercel.app/send_message', {
+          const res = await fetch('https://flask-heroku-xlgpt.herokuapp.com/send_message', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message }),
