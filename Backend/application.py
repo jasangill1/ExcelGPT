@@ -23,8 +23,8 @@ chat_prompt_template = ChatPromptTemplate.from_messages([
 ])
 
 # Initialize Flask app
-app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})
+application = Flask(__name__)
+CORS(application, resources={r"/*": {"origins": "*"}})
 
 
 
@@ -36,7 +36,7 @@ openai_llm = OpenAI(
 )
 agent = None
 
-@app.route("/", methods=["POST"])
+@application.route("/", methods=["POST"])
 def get_response():
     # Get file from POST request
     file = request.files["file"]
@@ -58,7 +58,7 @@ def get_response():
     # Return initial prompt as response
     return jsonify(response=initial_prompt[0].content)
 
-@app.route("/send_message", methods=["POST"])
+@application.route("/send_message", methods=["POST"])
 def send_message():
     try:
         data = request.get_json()
