@@ -23,7 +23,7 @@ const FileUpload = () => {
     const formData = new FormData();
     formData.append('file', file);
   
-    const res = await fetch('https://excelsior-7wyb.vercel.app/', {
+    const res = await fetch('http://127.0.0.1:5000/', {
       method: 'POST',
       body: formData,
     });
