@@ -23,10 +23,11 @@ const FileUpload = () => {
     const formData = new FormData();
     formData.append('file', file);
   
-    const res = await fetch('http://127.0.0.1:5000/', {
-        method: 'POST',
-        body: formData,
+    const res = await fetch('https://backend-khaki-two.vercel.app/', {
+      method: 'POST',
+      body: formData,
     });
+    
     const data = await res.json();
   
     console.log(data); 
