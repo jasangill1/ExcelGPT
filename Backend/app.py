@@ -12,8 +12,7 @@ import sys
 
 
 # Load OpenAI API key from environment variables or .env file
-openai_api_key ="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"
-
+openai_api_key = os.getenv("OPENAI_API_KEY")
 # Create prompt templates
 system_prompt_template = SystemMessagePromptTemplate.from_template("I'm a data science assistant. How can I help?")
 human_prompt_template = HumanMessagePromptTemplate.from_template("{question}")

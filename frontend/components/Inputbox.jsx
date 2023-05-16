@@ -32,7 +32,7 @@ export default function InputMessage() {
 
       return (
         <div className="w-full p-4 flex items-center text-green-400 bg-black">
-          <span className="text-2xl font-mono pr-4">$ </span>
+          <span className="text-2xl font-mono pr-4 pl-2">$ </span>
           <input
             className="text-2xl font-mono bg-black pl-2 flex-grow text-green-400 border-none"
             type="text"
