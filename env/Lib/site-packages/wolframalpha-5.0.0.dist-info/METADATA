@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: wolframalpha
+Version: 5.0.0
+Summary: Wolfram|Alpha 2.0 API client
+Home-page: https://github.com/jaraco/wolframalpha
+Author: Jason R. Coombs
+Author-email: jaraco@jaraco.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6
+Requires-Dist: xmltodict
+Requires-Dist: more-itertools
+Requires-Dist: jaraco.context
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: jaraco.packaging (>=8.2) ; extra == 'docs'
+Requires-Dist: rst.linker (>=1.9) ; extra == 'docs'
+Provides-Extra: testing
+Requires-Dist: pytest (!=3.7.3,>=3.5) ; extra == 'testing'
+Requires-Dist: pytest-checkdocs (>=1.2.3) ; extra == 'testing'
+Requires-Dist: pytest-flake8 ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+Requires-Dist: pytest-enabler ; extra == 'testing'
+Requires-Dist: pmxbot ; extra == 'testing'
+Requires-Dist: keyring ; extra == 'testing'
+Requires-Dist: pytest-black (>=0.3.7) ; (platform_python_implementation != "PyPy") and extra == 'testing'
+Requires-Dist: pytest-mypy ; (platform_python_implementation != "PyPy") and extra == 'testing'
+
+.. image:: https://img.shields.io/pypi/v/wolframalpha.svg
+   :target: `PyPI link`_
+
+.. image:: https://img.shields.io/pypi/pyversions/wolframalpha.svg
+   :target: `PyPI link`_
+
+.. _PyPI link: https://pypi.org/project/wolframalpha
+
+.. image:: https://github.com/jaraco/wolframalpha/workflows/tests/badge.svg
+   :target: https://github.com/jaraco/wolframalpha/actions?query=workflow%3A%22tests%22
+   :alt: tests
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black
+   :alt: Code style: Black
+
+.. image:: https://readthedocs.org/projects/wolframalpha/badge/?version=latest
+   :target: https://wolframalpha.readthedocs.io/en/latest/?badge=latest
+
+Python Client built against the `Wolfram|Alpha <http://wolframalpha.com>`_
+v2.0 API.
+
+Usage
+=====
+
+See the self-documenting source in
+`the docs <https://wolframalpha.readthedocs.io/en/latest/?badge=latest>`_
+for examples to get started.
+
+
