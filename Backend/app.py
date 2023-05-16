@@ -24,7 +24,8 @@ chat_prompt_template = ChatPromptTemplate.from_messages([
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": ["https://excelsior-gray.vercel.app", "https://excelsior-git-main-jasangill1.vercel.app", "https://excelsior-pmfliwgem-jasangill1.vercel.app"]}})
+
 
 # Create LangChain agent
 openai_llm = OpenAI(
