@@ -29,7 +29,7 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 # Create LangChain agent
 openai_llm = OpenAI(
     temperature=0.0,
-    model_name="text-davinci-003",
+    model_name="gpt-3.5-turbo",
     openai_api_key=openai_api_key
 )
 agent = None
