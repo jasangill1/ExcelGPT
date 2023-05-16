@@ -23,7 +23,7 @@ const FileUpload = () => {
     const formData = new FormData();
     formData.append('file', file);
   
-    const res = await fetch('https://backend-khaki-two.vercel.app/', {
+    const res = await fetch('https://excelsior-7wyb.vercel.app/', {
       method: 'POST',
       body: formData,
     });

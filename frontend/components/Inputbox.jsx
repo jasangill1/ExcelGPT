@@ -13,7 +13,7 @@ export default function InputMessage() {
     const handleKeyPress = async (e) => {
         if (e.key === 'Enter') {
           
-          const res = await fetch('https://backend-khaki-two.vercel.app/send_message', {
+          const res = await fetch('https://excelsior-7wyb.vercel.app/send_message', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message }),
