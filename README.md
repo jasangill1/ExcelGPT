@@ -1,35 +1,54 @@
-# ExcelGPT
-ExcelGPT is an AI-powered data science assistant. This assistant is designed to help you explore and understand your datasets, by using an OpenAI model to understand your queries and generate helpful responses.
+# ExcelGPT :bar_chart: :robot: 
 
-How it works
-The assistant uses the OpenAI GPT-3.5-turbo model. This is a language model developed by OpenAI that can generate human-like text given some input. In this case, it is used to process the user's queries about a dataset and generate responses.
+ExcelGPT is an AI-powered data science assistant designed to facilitate data exploration and understanding. The tool employs the OpenAI GPT-3.5-turbo model, a powerful language model, to comprehend your queries and provide insightful responses.
 
-The assistant is implemented as a Flask web application, which can be hosted on a server and interacted with over the internet. The application accepts HTTP POST requests containing the user's queries and returns the generated responses.
+## How It Works :bulb: 
 
-Usage
-To use ExcelGPT, you need to have a dataset in CSV or Excel format. You can submit this dataset via the / endpoint, which will return an initial prompt from the assistant.
+The assistant is integrated into a Flask web application, which can be hosted on a server and accessed via the internet.
 
-After this, you can submit your queries via the /send_message endpoint. The query should be included in the body of the POST request as a JSON object with a single field, "message", containing the query as a string. The response from the assistant will be returned as a JSON object with a single field, "response", containing the response as a string.
+## Usage :keyboard: 
 
-Setup
+To use ExcelGPT, you need to have a dataset in CSV or Excel format.
+
+- Submit this dataset via the `/` endpoint. This will return an initial prompt from the assistant.
+- After this, you can submit your queries via the `/send_message` endpoint.
+
+For example:
+
+```json
+{
+  "message": "Your query goes here..."
+}
+The response from the assistant will be returned in this format:
+```
+
+```json
+{
+  "response": "The assistant's response..."
+}
+```
+
+## Setup :wrench:
 To run the application, you need to have Python 3.9 or newer installed, as well as the dependencies listed in the requirements.txt file. These can be installed using pip:
 
-bash
-Copy code
+```bash
 pip install -r requirements.txt
-You also need to have an OpenAI API key, which should be set as the OPENAI_API_KEY environment variable.
+```
+You also need to have an OpenAI API key, which should be set as the `OPENAI_API_KEY` environment variable.
 
-To start the application, you can run the application.py file:
+To start the application, you can run the `application.py` file:
 
-bash
-Copy code
+```bash
 python application.py
-The application can be deployed on platforms such as Heroku or Vercel. For Heroku, a Procfile is included to specify the web server configuration.
+```
+To run the frontend of the application, navigate into the frontend directory and start the development server with the following commands:
 
-Contributing
-Contributions are welcome! Please feel free to submit a pull request.
+```bash
+cd frontend
+npm run dev
+```
 
-License
-ExcelGPT is open source, licensed under [INSERT LICENSE HERE].
+The application can be deployed on platforms such as Heroku or Vercel. For Heroku, a `Procfile` is included to specify the web server configuration.
 
-Please adjust the details as necessary based on the specifics of your project.
+## Contributing :handshake:
+Contributions are welcome! Please feel free to submit.
