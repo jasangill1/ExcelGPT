@@ -11,26 +11,34 @@ export default function InputMessage() {
     };
 
     const handleKeyPress = async (e) => {
-        if (e.key === 'Enter') {
-          
-          const res = await fetch('https://flask-heroku-xlgpt.herokuapp.com/send_message', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message }),
-          });
-
-          const data = await res.json();
-          console.log(data); 
-      
-          setMessage("");
-         
-          setMessages([...messages, { text: message, isUser: true }]);
-          
-         
-          setMessages(prevMessages => [...prevMessages, { text: data.response, isUser: false }]);
-        }
-      };
-
+      if (e.key === 'Enter') {
+        // Immediately add user message to state
+        setMessages(prevMessages => [...prevMessages, { text: message, isUser: true }]);
+    
+        // Set message input to empty
+        setMessage("");
+    
+        // Simulate a loading state for the AI response
+        setMessages(prevMessages => [...prevMessages, { text: "Thinking...", isUser: false }]);
+    
+        const res = await fetch('https://flask-heroku-xlgpt.herokuapp.com/send_message', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message }),
+        });
+    
+        const data = await res.json();
+        console.log(data);
+    
+        // Replace the loading state with the actual AI response
+        setMessages(prevMessages => {
+          let messagesCopy = [...prevMessages];
+          messagesCopy[messagesCopy.length - 1] = { text: data.response, isUser: false };
+          return messagesCopy;
+        });
+      }
+    };
+    
       return (
         <div className="w-full p-4 flex items-center text-green-400 bg-black">
           <span className="text-2xl font-mono pr-4 pl-2">$ </span>
