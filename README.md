@@ -41,6 +41,13 @@ To start the application, you can run the `application.py` file:
 ```bash
 python application.py
 ```
+To run the frontend of the application, navigate into the frontend directory and start the development server with the following commands:
+
+```bash
+cd frontend
+npm run dev
+```
+
 The application can be deployed on platforms such as Heroku or Vercel. For Heroku, a `Procfile` is included to specify the web server configuration.
 
 ## Contributing :handshake:
