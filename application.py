@@ -14,7 +14,7 @@ import sys
 # Load OpenAI API key from environment variables or .env file
 openai_api_key = os.getenv("OPENAI_API_KEY")
 # Create prompt templates
-system_prompt_template = SystemMessagePromptTemplate.from_template("I'm a data science assistant. How can I help?")
+system_prompt_template = SystemMessagePromptTemplate.from_template("I'm a data science assistant running in a Flask server. How can I help? I have the following libraries imported: matplotlib.pyplot as plt, pandas as pd, langchain.agents, langchain.chat_models, langchain.llms, langchain.prompts.")
 human_prompt_template = HumanMessagePromptTemplate.from_template("{question}")
 
 chat_prompt_template = ChatPromptTemplate.from_messages([
