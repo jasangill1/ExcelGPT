@@ -1,16 +1,24 @@
-// import client and necessary hooks
-import { useContext } from "react";
+'use client'
+import { useEffect, useContext, useRef } from "react";
 import { ChatContext } from "./ChatContext";
 import ChatMessage from "./ChatMessage";
 
-
 export default function Screen({ className }) {
   const { messages } = useContext(ChatContext);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   return (
-    <div className={`${className} relative bg-black overflow-auto p-4 sm:p-6 lg:p-8`}>
+    <div
+      className={`${className} relative bg-black overflow-auto p-4 sm:p-6 lg:p-8`}
+      ref={containerRef}
+    >
       <div className="text-white text-lg sm:text-xl lg:text-2xl">
-        <div>
           <pre className="font-mono text-white bg-black p-2 rounded text-xs sm:text-sm lg:text-base hidden sm:block">
             <code>
 {` 
@@ -47,12 +55,11 @@ export default function Screen({ className }) {
      </code>
           </pre>
         </div>
-        {
-          messages.map((message, index) => (
-            <ChatMessage key={index} message={message.text} isUser={message.isUser} />
-          ))
-        }
+        {messages.map((message, index) => (
+          <ChatMessage key={index} message={message.text} isUser={message.isUser} />
+        ))}
       </div>
-    </div>
+    
   );
 }
+
