@@ -43,14 +43,9 @@ export default function Screen({ className }) {
         <pre className="font-sans text-color1 bg-color4 p-3 rounded text-sm sm:text-base lg:text-lg">
 
           <code>
-            {` 
-+------------------------------------------+
-|                                          |
-| ExcelGPT [Version 0] Beta                | 
-|                                          |
-| C:\\Users\\ExcelAi: welcome to ExcelAi...  |
-|                                          |
-+------------------------------------------+
+            {`ExcelGPT [Version 0] Beta                
+C:\\Users\\ExcelAi: welcome to ExcelAi...  
+
 `}
           </code>
         </pre>

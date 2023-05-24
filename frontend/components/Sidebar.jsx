@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import FileUpload from './UpLoadFile';
@@ -8,6 +9,7 @@ export default function Sidebar() {
         <div className="relative w-[300px] h-full bg-quinary text-primary float-right text-center pt-10 font-mono flex flex-col justify-between">
             <div>
                 <h1 className="text-xl mb-5 font-mono flex justify-center items-center text-secondary">
+                    <Image src="/images/excellGptIcon.png" alt="Excel Icon" width={50} height={50} />
                     EXCELGPT
                 </h1>
                 <div className="mt-5">
