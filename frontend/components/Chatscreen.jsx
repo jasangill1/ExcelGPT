@@ -45,8 +45,8 @@ export default function Screen({ className }) {
             {` 
 +------------------------------------------+
 |                                          |
-| ExcelGPT [Version 0]                     | 
-| Jasan Gill. All rights reserved.         |
+| ExcelGPT [Version 0] Beta                | 
+|                                          |
 | C:\\Users\\ExcelAi: welcome to ExcelAi...  |
 |                                          |
 +------------------------------------------+
