@@ -39,22 +39,19 @@ const FileUpload = () => {
     setMessages(prevMessages => [...prevMessages, { text: data.response, isUser: false }]);
   }
   
-  
-
   return (
-    <form onSubmit={onSubmit} className="flex flex-col bg-black text-green-400 p-6 rounded-lg shadow-lg">
-        <div {...getRootProps()} className="dropzone flex items-center justify-center h-32 border-2 border-dashed border-green-400 rounded cursor-pointer">
+    <form onSubmit={onSubmit} className="flex flex-col bg-color4 text-color1 p-6 rounded-lg shadow-lg">
+        <div {...getRootProps()} className="dropzone flex items-center justify-center h-32 border-2 border-dashed border-color2 rounded cursor-pointer">
             <input {...getInputProps()} />
             {isDragActive ? <p>Drop the files here...</p> : <p>Drag 'n' drop, or click to select file</p>}
         </div>
-        {file && <p className="mt-4 text-green-400">Selected file: {file.name}</p>}
+        {file && <p className="mt-4 text-color2">Selected file: {file.name}</p>}
         <button 
             type="submit" 
-            className="mt-4 bg-green-400 text-black px-4 py-2 rounded shadow-md hover:bg-green-500 active:bg-green-600 transition-colors duration-200"
+            className="mt-4 bg-color2 text-color4 px-4 py-2 rounded shadow-md hover:bg-color3 active:bg-color3 transition-colors duration-200"
         >
             Upload
         </button>
-        
     </form>
   )
 }

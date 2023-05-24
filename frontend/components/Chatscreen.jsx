@@ -14,12 +14,12 @@ export default function Screen({ className }) {
 
   return (
     <div
-      className={`${className} relative bg-black overflow-auto p-4 sm:p-6 lg:p-8`}
-      ref={containerRef}
-    >
-      <div className="text-white text-lg sm:text-xl lg:text-2xl">
-        <pre className="font-mono text-white bg-black p-2 rounded text-xs sm:text-sm lg:text-base hidden sm:block">
-          <code>
+    className={`${className} relative bg-color5 overflow-auto p-8 sm:p-10 lg:p-12`}
+    ref={containerRef}
+  >
+    <div className="text-color1 text-lg sm:text-xl lg:text-2xl">
+      <pre className="font-sans text-color1 bg-color4 p-3 rounded text-sm sm:text-base lg:text-lg">
+        <code>
             {` 
 ███████╗██╗  ██╗ ██████╗███████╗██╗      ██████╗ ██████╗ ████████╗
 ██╔════╝╚██╗██╔╝██╔════╝██╔════╝██║     ██╔════╝ ██╔══██╗╚══██╔══╝
@@ -28,19 +28,20 @@ export default function Screen({ className }) {
 ███████╗██╔╝ ██╗╚██████╗███████╗███████╗╚██████╔╝██║        ██║   
 ╚══════╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝ ╚═════╝ ╚═╝        ╚═╝
 `}
-          </code>
+         </code>
         </pre>
-        <h2 className="text-green-400 font-mono text-lg sm:text-xl lg:text-2xl">Data Science Assistant</h2>
-        <h3 className="text-green-400 font-mono mt-4 text-md sm:text-lg lg:text-xl">Example Usage</h3>
-        <ol className="font-mono list-decimal list-inside text-left text-sm sm:text-md lg:text-lg">
+        <h2 className="text-color2 font-sans text-lg sm:text-xl lg:text-2xl">Data Science Assistant</h2>
+        <h3 className="text-color2 font-sans mt-4 text-md sm:text-lg lg:text-xl">Example Usage</h3>
+        <ol className="font-sans list-decimal list-inside text-left text-sm sm:text-md lg:text-lg text-color3">
           <li>Upload an EXCEL file containing data</li>
           <li>Ask ExcelGPT questions</li>
           <li>Receive responses from ExcelGPT</li>
         </ol>
-        <p className="font-mono mt-4 text-sm sm:text-md lg:text-lg">
+        <p className="font-sans mt-4 text-sm sm:text-md lg:text-lg text-color3">
           ExcelAI simplifies data analysis tasks by providing an intuitive conversational interface and leveraging the power of AI.
         </p>
-        <pre className="font-mono text-white bg-black p-2 rounded text-xs sm:text-sm lg:text-base  sm:block">
+        <pre className="font-sans text-color1 bg-color4 p-3 rounded text-sm sm:text-base lg:text-lg">
+
           <code>
             {` 
 +------------------------------------------+

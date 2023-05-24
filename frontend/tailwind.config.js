@@ -8,7 +8,13 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-       
+      },
+      colors: {
+        primary: '#DDD1C7',
+        secondary: '#C2CFB2',
+        tertiary: '#8DB580',
+        quaternary: '#7E887C',
+        quinary: '#4B4A67',
       },
     },
   },

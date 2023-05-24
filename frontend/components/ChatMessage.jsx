@@ -1,7 +1,7 @@
 function ChatMessage({ message, isUser }) {
   return (
-    <div className={`my-2 text-left ${isUser ? 'text-white' : 'text-green-400'}`}>
-      <div className="inline-block font-mono">
+    <div className={`my-4 text-left ${isUser ? 'bg-color5 p-2 rounded-lg' : ''}`}>
+      <div className={`inline-block font-sans ${isUser ? 'text-color1' : 'text-color2'}`}>
         {isUser ? '> ' : ''}
         {message}
       </div>
