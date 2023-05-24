@@ -18,31 +18,35 @@ export default function Screen({ className }) {
     ref={containerRef}
 >
     <div className="text-color1 text-lg sm:text-xl lg:text-2xl">
-        
-        <div className="bg-white rounded-lg shadow-lg p-6">
-            <h3 className="text-color2 font-sans mt-4 text-md sm:text-lg lg:text-xl">Example Usage</h3>
-            <ol className="font-sans list-decimal list-inside text-left text-sm sm:text-md lg:text-lg text-color3">
-              <li>Upload an EXCEL file containing data</li>
-              <li>Ask ExcelGPT questions</li>
-              <li>Receive responses from ExcelGPT</li>
-            </ol>
-            <h3 className="text-color2 font-sans mt-4 text-md sm:text-lg lg:text-xl">Limitations</h3>
-            <ul className="font-sans list-disc list-inside text-left text-sm sm:text-md lg:text-lg text-color3">
-              <li>Web version only</li>
-              <li>File size is limited</li>
-            </ul>
-         </div>
-
-        <p className="font-sans mt-4 text-sm sm:text-md lg:text-lg text-color3">
-            ExcelAI simplifies data analysis tasks by providing an intuitive conversational interface and leveraging the power of AI.
-        </p>
-        <pre className="font-sans text-color1 bg-color4 p-3 rounded text-sm sm:text-base lg:text-lg">
-            <code>
-                {`C:\\Users\\ExcelAi: welcome to ExcelAi...  
-`}
-          </code>
-        </pre>
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
+      <div className="bg-white rounded-lg shadow-xl p-6">
+        <h3 className="text-color2 font-sans mt-4 text-md sm:text-lg lg:text-xl text-center">Usage</h3>
+        <ol className="font-sans list-decimal list-inside text-left text-sm sm:text-md lg:text-lg text-color3">
+          <li>Upload an EXCEL file containing data</li>
+          <li>Ask ExcelGPT questions</li>
+          <li>Receive responses from ExcelGPT</li>
+        </ol>
       </div>
+
+      <div className="bg-white rounded-lg shadow-xl p-6">
+        <h3 className="text-color2 font-sans mt-4 text-md sm:text-lg lg:text-xl text-center">Limitations</h3>
+        <ol className="font-sans list-disc list-inside text-left text-sm sm:text-md lg:text-lg text-color3">
+          <li>Web version only</li>
+          <li>File size is limited</li>
+          <li>Usage timeout after 30 seconds</li>
+        </ol>
+      </div>
+
+      <div className="bg-white rounded-lg shadow-xl p-6">
+      <h3 className="text-color2 font-sans mt-4 text-md sm:text-lg lg:text-xl text-center">Tips</h3>
+        <ol className="font-sans list-decimal list-inside text-left text-sm sm:text-md lg:text-lg text-color3">
+          <li>Refresh if stuck on thinking</li>
+          <li>Keep datasheet simple, make it easy to read</li>
+          <li>Give feedback for feature you think are good!</li>
+        </ol>
+      </div>
+    </div>
+</div>
       <div className="flex-grow overflow-auto">
         {messages.map((message, index) => (
           <ChatMessage key={index} message={message.text} isUser={message.isUser} />

@@ -39,17 +39,17 @@ export default function InputMessage() {
       }
     };
     
-      return (
-        <div className="w-full p-4 flex items-center text-color1 bg-color4 border-2 border-color1 rounded-md">
-          <span className="text-2xl font-mono pr-4 pl-2">$ </span>
-          <input
-            className="text-2xl font-mono bg-color4 pl-2 flex-grow text-color1 border-none"
-            type="text"
-            placeholder="Type your command..."
-            value={message}
-            onChange={handleInputChange}
-            onKeyPress={handleKeyPress}
-          />
-        </div>
-      ); 
+    return (
+      <div className="w-full p-4 flex items-center bg-color4 border-2 border-color3 rounded-md shadow-md">
+        <span className="text-2xl font-mono pr-4 pl-2 text-color1">$ </span>
+        <input
+          className="text-2xl font-mono bg-color4 pl-2 flex-grow text-color1 border-none outline-none"
+          type="text"
+          placeholder="Type your command..."
+          value={message}
+          onChange={handleInputChange}
+          onKeyPress={handleKeyPress}
+        />
+      </div>
+  ); 
 }
