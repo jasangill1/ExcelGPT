@@ -40,16 +40,23 @@ export default function InputMessage() {
     };
     
     return (
-      <div className="w-full p-4 flex items-center bg-color4 border-2 border-color3 rounded-md shadow-md">
-        <span className="text-2xl font-mono pr-4 pl-2 text-color1">$ </span>
-        <input
-          className="text-2xl font-mono bg-color4 pl-2 flex-grow text-color1 border-none outline-none"
-          type="text"
-          placeholder="Type your command..."
-          value={message}
-          onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
-        />
+      <div className="w-full px-4 py-2 flex items-center border-quaternary rounded ">
+          <span className="text-xl font-courier pr-4 pl-2 text-primary">$ </span>
+          <input
+              className="text-xl font-courier pl-2 flex-grow text-primary border-none outline-none"
+              type="text"
+              placeholder="Ask your question"
+              value={message}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
+          />
+          <button 
+              className="ml-4 bg-quinary text-white py-1 px-3 rounded text-xl font-courier hover:bg-primary transition-colors"
+              onClick={handleKeyPress}
+          >
+              Send
+          </button>
       </div>
+      
   ); 
 }

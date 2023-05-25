@@ -1,50 +1,7 @@
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-body {
-  margin: 0;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.w-800 {
-  width: 800px;
-}
-
-.h-600 {
-  height: 600px;
-}
-
-.border-40 {
-  border-width: 40px;
-}
-
-.rounded-60 {
-  border-radius: 60px;
-}
-
-.shadow-2xl {
-  box-shadow: 0 0 40px #000;
-}
-
-.bg-gradient-to-center {
-  background: radial-gradient(circle at center, #444, #000);
-}
-
-.text-4xl {
-  font-size: 40px;
-}
-
-
-.text-2xl {
-  font-size: 20px;
-}
-
-.p-4 {
-  padding: 20px;
-}
-
-.rounded-10 {
-  border-radius: 10px;
+html {
+  @apply font-courier;
 }

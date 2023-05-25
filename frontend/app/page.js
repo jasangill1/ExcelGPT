@@ -34,8 +34,8 @@ export default function Home() {
         <ChatProvider>
           <Sidebar className={'absolute left-0 top-0 bottom-0 w-full'} />
           <div className="flex flex-col h-full w-full sm:pl-0 pt-4 pb-16 sm:pb-4 pr-4 overflow-auto"> 
-            <Screen />
-            <InputMessage className="absolute bottom-0 left-0 right-0 w-full"/>
+            <Screen className='h-full'/>
+            <InputMessage />
           </div>
         </ChatProvider>
       </main>

@@ -16,6 +16,9 @@ module.exports = {
         quaternary: '#7E887C',
         quinary: '#4B4A67',
       },
+      fontFamily: {
+        'courier': ['Courier', 'monospace'],
+      },
     },
   },
   plugins: [],
