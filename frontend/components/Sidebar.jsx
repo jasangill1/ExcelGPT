@@ -9,7 +9,7 @@ export default function Sidebar() {
         <div className="relative w-[300px] h-full bg-quinary text-primary float-right text-center pt-10 font-courier flex flex-col justify-between">
             <div>
                 <h1 className="text-xl mb-5 font-courier flex justify-center items-center text-secondary">
-                    <Image src="/images/excelogo.png" alt="Excel Icon" width={500} height={500} />
+                    <Image src="/images/excelGPTlogo.png" alt="Excel Icon" width={125} height={125} />
                     
                 </h1>
                 <div className="mt-5">

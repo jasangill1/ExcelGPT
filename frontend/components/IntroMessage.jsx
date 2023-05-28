@@ -5,7 +5,7 @@ const IntroMessage = ({ onClose }) => {
   return (
     <div className="flex flex-col items-center mb-5 max-w-full overflow-auto space-y-4 bg-primary text-quinary border-2 border-tertiary p-4 m-4 rounded-md">
         <button className="self-end text-secondary bg-quinary p-1 rounded" onClick={onClose}>X</button>
-        <Image src="/images/excellGptIcon.png" alt="ExcelAI Logo" width={80} height={80} className="rounded-full"/> 
+        <Image src="/images/excelGPTlogo.png" alt="ExcelAI Logo" width={80} height={80} className="rounded-full"/> 
 
         <h2 className="text-tertiary font-courier text-center">ExcelGPT - Data Science Assistant</h2>
         
