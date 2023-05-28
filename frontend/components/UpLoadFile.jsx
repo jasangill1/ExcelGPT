@@ -43,7 +43,7 @@ const FileUpload = () => {
     <form onSubmit={onSubmit} className="flex flex-col bg-quinary text-primary p-6 rounded-lg shadow-lg">
         <div {...getRootProps()} className="dropzone flex items-center justify-center h-32 border-2 border-dashed border-secondary rounded cursor-pointer">
             <input {...getInputProps()} />
-            {isDragActive ? <p>Drop the files here...</p> : <p>Drag 'n' drop, or click to select file</p>}
+            {isDragActive ? <p>Drop the files here...</p> : <p className='text-center'>Drag 'n' drop, or click to select file</p>}
         </div>
         {file && <p className="mt-4 text-secondary">Selected file: {file.name}</p>}
         <button 

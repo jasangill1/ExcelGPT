@@ -15,7 +15,7 @@ const IntroMessage = ({ onClose }) => {
             <li>Ask ExcelAI questions</li>
             <li>Receive responses from ExcelAI</li>
         </ol>
-        <p className="font-courier mt-4 text-quinary">
+        <p className="font-courier mt-4 text-quinary pb-14">
             ExcelAI simplifies data analysis tasks by providing an intuitive conversational interface and leveraging the power of AI.
         </p>
         

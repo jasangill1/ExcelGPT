@@ -1,6 +1,7 @@
 import { useEffect, useContext, useRef } from "react";
 import { ChatContext } from "./ChatContext";
 import ChatMessage from "./ChatMessage";
+import "../app/globals.css"
 
 export default function Screen({ className }) {
   const { messages } = useContext(ChatContext);
@@ -25,6 +26,7 @@ export default function Screen({ className }) {
       <div className="text-quinary text-lg sm:text-xl lg:text-2xl">
         <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
           <div className="bg-primary rounded-lg shadow-xl p-6 text-quinary">
+            
             <h2 className="font-courier mt-4 text-md sm:text-lg lg:text-xl text-center text-bold pb-2">Usage</h2>
             <ul className="font-courier list-disc list-inside text-left text-sm sm:text-md lg:text-lg">
               <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Upload an EXCEL file  containing data</li>
@@ -40,6 +42,7 @@ export default function Screen({ className }) {
               <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Web version only</li>
               <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>File size is limited</li>
               <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Usage timeout if task is taking to long</li>
+              <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Caution ExcelGPT is prone to error always make sure to do your own research </li>
             </ul>
           </div>
 
