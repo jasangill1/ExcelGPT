@@ -27,9 +27,9 @@ export default function Screen({ className }) {
           <div className="bg-primary rounded-lg shadow-xl p-6 text-quinary">
             <h2 className="font-courier mt-4 text-md sm:text-lg lg:text-xl text-center text-bold pb-2">Usage</h2>
             <ul className="font-courier list-disc list-inside text-left text-sm sm:text-md lg:text-lg">
-              <li style={{ textIndent: '-1em', paddingLeft: '1em' }}>Upload an EXCEL file containing data</li>
+              <li style={{ textIndent: '-1em', paddingLeft: '1em' }}>Upload an EXCEL file  containing data</li>
               <li >Ask ExcelGPT questions</li>
-              <li style={{ textIndent: '-1.em', paddingLeft: '1em' }}>Receive responses from ExcelGPT</li>
+              <li style={{ textIndent: '-1.em'}}>Receive responses!</li>
             </ul>
           </div>
 
@@ -38,7 +38,7 @@ export default function Screen({ className }) {
             <ul className="font-courier list-disc list-inside text-left text-sm sm:text-md lg:text-lg">
               <li>Web version only</li>
               <li>File size is limited</li>
-              <li style={{ textIndent: '-1.em', paddingLeft: '1em' }}s>Usage timeout if task is taking to long</li>
+              <li style={{ textIndent: '-1.3em', paddingLeft: '1.1em' }}>Usage timeout if task is taking to long</li>
             </ul>
           </div>
 

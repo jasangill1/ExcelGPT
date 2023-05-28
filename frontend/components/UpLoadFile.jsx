@@ -14,8 +14,8 @@ const FileUpload = () => {
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ 
     onDrop, 
-    accept: 'text/csv' 
-  });
+    accept: 'text/csv, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' 
+});
 
   const onSubmit = async (e) => {
     e.preventDefault();
