@@ -41,22 +41,34 @@ def get_response():
     # Get file from POST request
     file = request.files["file"]
 
-    # Read the file using Pandas
-    with tempfile.NamedTemporaryFile(delete=False) as temp:
-        temp.write(file.read())
-        temp.close()
-        df = pd.read_csv(temp.name) if file.content_type == "text/csv" else pd.read_excel(temp.name)
+    # Check if the file is CSV
+    if file.content_type != "text/csv":
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".xlsx") as temp:
+            temp.write(file.read())
+            temp.close()
+
+            # Read the file as Excel and save as CSV
+            df = pd.read_excel(temp.name)
+            csv_file_path = temp.name.replace(".xlsx", ".csv")
+            df.to_csv(csv_file_path, index=False)
+    else:
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as temp:
+            temp.write(file.read())
+            temp.close()
+
+            csv_file_path = temp.name
 
     # Create a LangChain agent for the file
     global agent
-    agent = create_csv_agent(openai_llm, temp.name, verbose=True)
+    agent = create_csv_agent(openai_llm, csv_file_path, verbose=True)
 
     # Get initial prompt
-    system_template = "Welcome to ExcelAI! How can I assist you with your {file_type} today?"
-    initial_prompt = ChatPromptTemplate.from_messages([SystemMessagePromptTemplate.from_template(system_template)]).format_prompt(file_type=file.content_type).to_messages()
+    system_template = "Welcome to ExcelAI! How can I assist you with your data today?"
+    initial_prompt = ChatPromptTemplate.from_messages([SystemMessagePromptTemplate.from_template(system_template)]).format_prompt().to_messages()
 
     # Return initial prompt as response
     return jsonify(response=initial_prompt[0].content)
+
 
 @application.route("/send_message", methods=["POST"])
 def send_message():
@@ -72,9 +84,6 @@ def send_message():
         return jsonify(response=response)
     except Exception as e:
         return jsonify(response=str(e)), 500
-
-
-
 
 
 if __name__ == "__main__":
