@@ -26,22 +26,26 @@ export default function Sidebar() {
 
                 <div className="pt-10 px-4 lg:px-0">
                     <h1 className="text-xl mb-5 font-courier flex justify-center items-center text-secondary">
-                        <Image src="/images/excelGPTlogo.png" alt="Excel Icon" width={125} height={125} />
+                        <Image src="/images/logoo.png" alt="Excel Icon" width={125} height={125} />
                     </h1>
-                    <div className="mt-5 pb-8">
-                        <FileUpload />
+                    <div className="flex flex-col justify-between h-full">
+                        <div className="mt-5 pb-1">
+                            <FileUpload />
+                        </div>
+                        <div className="text-secondary text-center flex flex-1 p-5 content-center items-center justify-center absolute bottom-0">
+                            <a href="https://discord.gg/SgKTncwrdv" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
+                                <FontAwesomeIcon icon={faDiscord} size="2x" />
+                            </a>
+                            <a href="https://twitter.com/JasanGill28" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
+                                <FontAwesomeIcon icon={faTwitter} size="2x" />
+                            </a>
+                            <a href="https://github.com/jasangill1" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
+                                <FontAwesomeIcon icon={faGithub} size="2x" />
+                            </a>
+                        </div>
                     </div>
-                    <div className="text-secondary text-center">
-                        <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="block mb-2 ">
-                            <FontAwesomeIcon icon={faDiscord} size="2x" />
-                        </a>
-                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="block mb-2 ">
-                            <FontAwesomeIcon icon={faTwitter} size="2x" />
-                        </a>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="block mb-2 ">
-                            <FontAwesomeIcon icon={faGithub} size="2x" />
-                        </a>
-                    </div>
+
+
                 </div>
             </div>
         </div>

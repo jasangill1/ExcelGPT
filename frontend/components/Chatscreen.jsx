@@ -19,38 +19,40 @@ export default function Screen({ className }) {
       ref={containerRef}
     >
       <div className="text-center pb-4">
-        
-      <span className="bg-quinary text-white px-2 py-1 rounded text-xl font-bold">Beta</span>
+      <div className="flex justify-center items-center">
+        <h3 className="font-courier text-xl sm:text-2xl lg:text-3xl pr-2">ExcelGPT</h3>
+        <span className="bg-quinary text-white px-2 py-1 rounded text-sm font-courier">Beta</span>
+      </div>
 </div>
 
 <div className="text-quinary text-base sm:text-lg lg:text-xl">
   <div className="grid gap-4 grid-cols-1 md:grid-cols-3">
     <div className="bg-primary rounded-lg shadow-xl p-6 text-quinary ">
-      <h2 className="font-courier mt-4 text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Usage</h2>
+      <h2 className="font-courier text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Usage</h2>
       <ul className="font-courier list-disc list-inside text-left text-xs sm:text-sm lg:text-base">
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Upload an EXCEL file  containing data</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Ask ExcelGPT questions</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>A python agent will be created to write and execute code to find your answer</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Receive answer from ExcelGPT</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Upload your data file in Excel or CSV format to get started.</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Pose your questions to ExcelGPT.</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>A Python agent will be generated to formulate and execute code based on your inquiries</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'}}>Retrieve your answer directly from ExcelGPT.</li>
       </ul>
     </div>
 
     <div className="bg-primary rounded-lg shadow-xl p-6 text-quinary">
-      <h2 className="font-courier mt-4 text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Limitations</h2>
+      <h2 className="font-courier text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Limitations</h2>
       <ul className="font-courier list-disc list-inside text-left text-xs sm:text-sm lg:text-base">
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Web version only</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>File size is limited</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Usage timeout if task is taking to long</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Caution ExcelGPT is prone to error always make sure to do your own research </li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Web version only (local version coming soon)</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Be aware of file size limitations when uploading data</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>If a task is too time-consuming, it may result in usage timeout</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Be mindful that ExcelGPT may make errors. Always double-check your results and conduct your own research for confirmation. </li>
       </ul>
     </div>
 
     <div className="bg-primary rounded-lg shadow-xl p-6 text-quinary ">
-      <h2 className="font-courier mt-4 text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Tips</h2>
+      <h2 className="font-courier text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Tips</h2>
       <ul className="font-courier list-disc list-inside text-left text-xs sm:text-sm lg:text-base">
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>Refresh if stuck on thinking</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>Keep datasheet simple, make it easy to read</li>
-        <li style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>Give feedback for features you would like added</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>If the system appears to be stuck in processing mode, try refreshing your page.</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>Keep your datasheets uncomplicated and clear for easy readability.</li>
+        <li style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>We appreciate your feedback! Please share any feature requests or improvements you'd like to see implemented on our discord.</li>
       </ul>
     </div>
   </div>
