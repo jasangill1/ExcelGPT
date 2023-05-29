@@ -26,8 +26,6 @@ chat_prompt_template = ChatPromptTemplate.from_messages([
 application = Flask(__name__)
 CORS(application, resources={r"/*": {"origins": "*"}})
 
-
-
 # Create LangChain agent
 openai_llm = OpenAI(
     temperature=0.0,
