@@ -1,6 +1,9 @@
 'use client'
 import { useState, useContext } from "react";
 import { ChatContext } from "./ChatContext";
+import { db } from '../util/firebase';  // Adjust the path if necessary
+import { addDoc, collection } from 'firebase/firestore';
+
 
 export default function InputMessage() {
     const [message, setMessage] = useState("");
@@ -14,22 +17,33 @@ export default function InputMessage() {
       if (e.key === 'Enter') {
         // Immediately add user message to state
         setMessages(prevMessages => [...prevMessages, { text: message, isUser: true }]);
-    
+        
+        // Log user message to Firestore
+        try {
+          await addDoc(collection(db, 'messages'), {
+            text: message,
+            timestamp: new Date().toISOString(),
+            isUser: true
+          });
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+        
         // Set message input to empty
         setMessage("");
-    
+        
         // Simulate a loading state for the AI response
         setMessages(prevMessages => [...prevMessages, { text: "Thinking...", isUser: false }]);
-    
+        
         const res = await fetch('https://flask-heroku-xlgpt.herokuapp.com/send_message', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message }),
         });
-    
+        
         const data = await res.json();
         console.log(data);
-    
+        
         // Replace the loading state with the actual AI response
         setMessages(prevMessages => {
           let messagesCopy = [...prevMessages];
@@ -38,6 +52,7 @@ export default function InputMessage() {
         });
       }
     };
+    
     
     return (
       <div className="w-full px-4 py-2 flex items-center border-quaternary rounded ">
