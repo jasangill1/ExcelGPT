@@ -45,6 +45,7 @@ To run the frontend of the application, navigate into the frontend directory and
 
 ```bash
 cd frontend
+npm install
 npm run dev
 ```
 
