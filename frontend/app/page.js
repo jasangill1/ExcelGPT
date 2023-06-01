@@ -4,7 +4,7 @@ import Screen from '../components/Chatscreen';
 import Sidebar from '../components/Sidebar';
 import InputMessage from '../components/Inputbox';
 import { ChatProvider } from "../components/ChatContext";
-import { Analytics } from '@vercel/analytics';
+import { Analytics } from '@vercel/analytics/react';
 
 
 
