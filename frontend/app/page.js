@@ -6,13 +6,14 @@ import InputMessage from '../components/Inputbox';
 import { ChatProvider } from "../components/ChatContext";
 import { Analytics } from '@vercel/analytics/react';
 
+
+
 import "./globals.css"
 
 export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-color5">
-      
       <main className="w-full h-full flex justify-center items-center flex-grow relative bg-color4 border-color3 shadow-2xl">  
         <ChatProvider>
           <Sidebar className={'absolute left-0 top-0 bottom-0 w-full'} />

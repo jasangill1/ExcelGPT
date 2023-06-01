@@ -40,10 +40,16 @@ export default function Screen({ className }) {
     <div className="bg-primary rounded-lg shadow-xl p-6 text-quinary">
       <h2 className="font-courier text-sm sm:text-base lg:text-lg text-center font-bold pb-2">Limitations</h2>
       <ul className="font-courier list-disc list-inside text-left text-xs sm:text-sm lg:text-base">
+        <li className="text-sm font-courier text-black text-bold" style={{ textIndent: '-1.3em', paddingLeft: '1em' }}>
+            <span role="img" aria-label="caution">⚠️ </span>
+            Must upload file to use
+            <span role="img" aria-label="caution"> ⚠️ </span>
+        </li>
         <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Web version only (local version coming soon)</li>
         <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Be aware of file size limitations when uploading data</li>
         <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>If a task is too time-consuming, it may result in usage timeout</li>
         <li style={{ textIndent: '-1.3em', paddingLeft: '1em'  }}>Be mindful that ExcelGPT may make errors. Always double-check your results and conduct your own research for confirmation. </li>
+       
       </ul>
     </div>
 
