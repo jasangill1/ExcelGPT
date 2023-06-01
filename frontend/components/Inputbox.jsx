@@ -53,10 +53,11 @@ export default function InputMessage() {
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault(); 
+            e.preventDefault();
             sendMessage();
         }
     };
+    
     
 
     const handleClick = async () => {
