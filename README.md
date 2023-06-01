@@ -48,6 +48,7 @@ cd frontend
 npm install
 npm run dev
 ```
+make sure to change the ports to the flask ports normally shows up once server starts 
 
 The application can be deployed on platforms such as Heroku or Vercel. For Heroku, a `Procfile` is included to specify the web server configuration.
 
