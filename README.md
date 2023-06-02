@@ -19,9 +19,9 @@ For example:
 {
   "message": "Your query goes here..."
 }
-The response from the assistant will be returned in this format:
-```
 
+```
+The response from the assistant will be returned in this format:
 ```json
 {
   "response": "The assistant's response..."
