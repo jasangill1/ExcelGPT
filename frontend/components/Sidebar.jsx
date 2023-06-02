@@ -33,19 +33,17 @@ export default function Sidebar() {
                             <FileUpload />
                         </div>
                         <div className="text-secondary text-center flex flex-1 p-5 content-center items-center justify-center absolute bottom-0">
-                            <a href="https://discord.gg/SgKTncwrdv" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
+                            <a href=" " target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
                                 <FontAwesomeIcon icon={faDiscord} size="2x" />
                             </a>
                             <a href="https://twitter.com/JasanGill28" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
                                 <FontAwesomeIcon icon={faTwitter} size="2x" />
                             </a>
-                            <a href="https://github.com/jasangill1" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
+                            <a href="https://github.com/jasangill1/ExcelGPT" target="_blank" rel="noopener noreferrer" className="block mb-2 p-2">
                                 <FontAwesomeIcon icon={faGithub} size="2x" />
                             </a>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>

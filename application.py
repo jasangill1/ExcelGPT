@@ -67,7 +67,6 @@ def get_response():
     # Return initial prompt as response
     return jsonify(response=initial_prompt[0].content)
 
-
 @application.route("/send_message", methods=["POST"])
 def send_message():
     try:
