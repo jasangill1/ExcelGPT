@@ -34,7 +34,7 @@ export default function InputMessage() {
         // Simulate a loading state for the AI response
         setMessages(prevMessages => [...prevMessages, { text: "Thinking...", isUser: false }]);
 
-        const res = await fetch('https://flask-heroku-xlgpt.herokuapp.com/send_message', {
+        const res = await fetch('http://127.0.0.1:5000/send_message', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message }),
